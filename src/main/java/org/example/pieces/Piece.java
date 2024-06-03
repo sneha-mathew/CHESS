@@ -2,6 +2,8 @@ package org.example.pieces;
 
 import org.example.board.Position;
 
+import java.util.List;
+
 public abstract class Piece {
     private boolean isWhite;
     private Position position;
@@ -17,4 +19,6 @@ public abstract class Piece {
     public Position getPosition() {
         return position;
     }
+
+    public abstract List<Position> getPossibleMoves();
 }
