@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fee83585-f19e-4a37-9062-f7ec3258d6d2" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/exception/UnknownPiece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/King.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Pawn.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Piece.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/PieceFactory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Queen.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/pieces/PieceFactoryTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/board/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/board/PositionTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,12 +56,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "JUnit.PieceFactoryTest.executor": "Run",
     "JUnit.PositionTest.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/Users/vargh/IdeaProjects/Chess/src/main/java/org/example",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
@@ -64,12 +71,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.pieces" />
+      <recent name="org.example.exception" />
       <recent name="org.example.board" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.pieces" />
       <recent name="org.example.board" />
     </key>
   </component>
