@@ -1,4 +1,4 @@
-# Chess - Possible Moves for a piece
+#  Piece Moves Calculator
 
 This project calculates all possible moves for a piece at a particular location on a chessboard. The project is built using Java 11 and Maven.
 
