@@ -10,10 +10,10 @@ class MoveTest {
 
     @Test
     void testAllMoves() {
-        Move move=new MoveBackward();
+        Move move=new MoveDown();
         assertEquals("K7",move.proceed(pos));
 
-        move=new MoveForward();
+        move=new MoveUp();
         assertEquals("K9",move.proceed(pos));
 
         move=new MoveLeft();

@@ -1,5 +1,6 @@
 package org.example.pieces;
 
+import org.example.Direction;
 import org.example.board.Position;
 
 import java.util.ArrayList;
@@ -14,7 +15,8 @@ public class Pawn extends Piece {
     @Override
     public List<Position> getPossibleMoves() {
         List<Position> possibleMoves = new ArrayList<>();
-        Optional<Position> move = isWhite() ? getPosition().moveForward() : getPosition().moveBackward();
+        Direction direction = isWhite() ? Direction.UP:Direction.DOWN ;
+        Optional<Position> move =   getPosition().move(direction);
         move.ifPresent(possibleMoves::add);
         return possibleMoves;
     }

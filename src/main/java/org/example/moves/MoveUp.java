@@ -1,9 +1,8 @@
 package org.example.moves;
 
 import org.example.PositionHelper;
-import org.example.board.Position;
 
-public class MoveForward implements Move {
+public class MoveUp implements Move {
 
     @Override
     public String proceed(String position) {

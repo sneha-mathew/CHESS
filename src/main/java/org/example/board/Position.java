@@ -1,5 +1,6 @@
 package org.example.board;
 
+import org.example.Direction;
 import org.example.PositionHelper;
 import org.example.exception.InvalidPostionException;
 import org.example.moves.*;
@@ -22,56 +23,21 @@ public class Position {
         return PositionHelper.getString(column,row);
     }
 
-    public Optional<Position> moveForward()  {
-        String newPosition=new MoveForward().proceed(PositionHelper.getString(column,row));
+    public Optional<Position> move(Direction direction ){
+        Move move = null;
+        switch (direction){
+            case UP: move=new MoveUp();break;
+            case DOWN: move=new MoveDown();break;
+            case RIGHT: move=new MoveRight();break;
+            case LEFT: move=new MoveLeft();break;
+            case DIAG_UP_LEFT: move=new MoveDiagUpLeft();break;
+            case DIAG_UP_RIGHT: move=new MoveDiagUpRight();break;
+            case DIAG_DOWN_RIGHT: move=new MoveDiagDownRight();break;
+            case DIAG_DOWN_LEFT: move=new MoveDiagDownLeft();break;
+        }
+        String newPosition=move.proceed(PositionHelper.getString(column,row));
         return getPosition(newPosition);
     }
-
-    public Optional<Position> moveBackward()  {
-        String newPosition=new MoveBackward().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveRight()  {
-        String newPosition=new MoveRight().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveLeft() {
-        String newPosition=new MoveLeft().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveDiagUpRight()  {
-        String newPosition=new MoveDiagUpRight().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveDiagUpLeft() {
-        String newPosition=new MoveDiagUpLeft().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveDiagDownRight()  {
-        String newPosition=new MoveDiagDownRight().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    public Optional<Position> moveDiagDownLeft() {
-        String newPosition=new MoveDiagDownLeft().proceed(PositionHelper.getString(column,row));
-        return getPosition(newPosition);
-    }
-
-    private char increment(char c) {
-        return (char) (c + 1);
-    }
-    private char decrement(char c) {
-        return (char) (c - 1);
-    }
-    private Optional<Position> move(char column, char row) {
-        return getPosition("" + column + row);
-    }
-
     private static Optional<Position> getPosition(String pos) {
         try {
             return Optional.of(new Position(pos));

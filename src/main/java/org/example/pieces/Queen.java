@@ -1,10 +1,13 @@
 package org.example.pieces;
 
+import org.example.Direction;
 import org.example.board.Position;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.Arrays.stream;
 
 public class Queen extends Piece {
     public Queen(boolean isWhite, Position position) {
@@ -14,56 +17,20 @@ public class Queen extends Piece {
     @Override
     public List<Position> getPossibleMoves() {
         List<Position> possibleMoves = new ArrayList<>();
-        possibleMoves.addAll(recursiveBackward(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveForward(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveLeft(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveRight(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveDiagUpLeft(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveDiagUpRight(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveDiagDownLeft(new ArrayList<>(),getPosition()));
-        possibleMoves.addAll(recursiveDiagDownRight(new ArrayList<>(),getPosition()));
-        return possibleMoves;
+        List<Direction> directions= List.of(Direction.UP,Direction.DOWN,Direction.LEFT,Direction.RIGHT,
+                Direction.DIAG_UP_LEFT,Direction.DIAG_UP_RIGHT, Direction.DIAG_DOWN_LEFT,Direction.DIAG_DOWN_RIGHT);
+        return directions.stream()
+                .flatMap(direction ->getMoves(getPosition(),direction).stream())
+                .collect(Collectors.toList());
     }
 
-    private List<Position> recursiveBackward(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveBackward();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveBackward(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveForward(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveForward();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveForward(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveLeft(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveLeft();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveLeft(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveRight(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveRight();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveRight(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-
-    private List<Position> recursiveDiagUpRight(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveDiagUpRight();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveDiagUpRight(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveDiagUpLeft(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveDiagUpLeft();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveDiagUpLeft(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveDiagDownLeft(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveDiagDownLeft();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveDiagDownLeft(possibleMoves,move.get());});
-        return possibleMoves;
-    }
-    private List<Position> recursiveDiagDownRight(List<Position> possibleMoves, Position position) {
-        Optional<Position> move=position.moveDiagDownRight();
-        move.ifPresent(e ->{ possibleMoves.add(e); recursiveDiagDownRight(possibleMoves,move.get());});
+    private List<Position> getMoves( Position position, Direction direction) {
+        List<Position> possibleMoves=new ArrayList<>();
+        Optional<Position> newPosition=position.move(direction);
+        newPosition.ifPresent(e -> {
+            possibleMoves.addAll(getMoves(e,direction));
+            possibleMoves.add(e);
+        });
         return possibleMoves;
     }
 }

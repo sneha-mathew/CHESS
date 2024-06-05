@@ -1,5 +1,6 @@
 package org.example.board;
 
+import org.example.Direction;
 import org.example.exception.InvalidPostionException;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -30,174 +31,174 @@ public class PositionTest {
     }
 
     @Test
-    public void testValidMoveForward() throws InvalidPostionException{
+    public void testValidMoveUp() throws InvalidPostionException{
         Position pos =  new Position("A1");
-        assertEquals("A2",pos.moveForward().orElseThrow().toString());
+        assertEquals("A2",pos.move(Direction.UP).orElseThrow().toString());
 
         pos =  new Position("H1");
-        assertEquals("H2",pos.moveForward().orElseThrow().toString());
+        assertEquals("H2",pos.move(Direction.UP).orElseThrow().toString());
 
         pos =  new Position("F4");
-        assertEquals("F5",pos.moveForward().orElseThrow().toString());
+        assertEquals("F5",pos.move(Direction.UP).orElseThrow().toString());
 
         pos =  new Position("F1");
-        assertEquals("F2",pos.moveForward().orElseThrow().toString());
+        assertEquals("F2",pos.move(Direction.UP).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A8", "F8", "H8"})
-    public void testNoMovesForward(String pos) throws InvalidPostionException {
+    public void testNoMovesUp(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveForward());
+        assertEquals(Optional.empty(), position.move(Direction.UP));
     }
 
     @Test
-    public void testMoveBackward() throws InvalidPostionException {
+    public void testMoveDown() throws InvalidPostionException {
         Position pos =  new Position("A8");
-        assertEquals("A7",pos.moveBackward().orElseThrow().toString());
+        assertEquals("A7",pos.move(Direction.DOWN).orElseThrow().toString());
 
         pos =  new Position("F8");
-        assertEquals("F7",pos.moveBackward().orElseThrow().toString());
+        assertEquals("F7",pos.move(Direction.DOWN).orElseThrow().toString());
 
         pos =  new Position("F4");
-        assertEquals("F3",pos.moveBackward().orElseThrow().toString());
+        assertEquals("F3",pos.move(Direction.DOWN).orElseThrow().toString());
 
         pos =  new Position("H8");
-        assertEquals("H7",pos.moveBackward().orElseThrow().toString());
+        assertEquals("H7",pos.move(Direction.DOWN).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A1",  "F1", "H1"})
-    public void testNoMoveBackward(String pos) throws InvalidPostionException {
+    public void testNoMoveDown(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveBackward());
+        assertEquals(Optional.empty(), position.move(Direction.DOWN));
     }
 
 
     @Test
     public void testMoveRight() throws InvalidPostionException {
         Position position =  new Position("A1");
-        assertEquals("B1",position.moveRight().orElseThrow().toString());
+        assertEquals("B1",position.move(Direction.RIGHT).orElseThrow().toString());
 
         position =  new Position("A8");
-        assertEquals("B8",position.moveRight().orElseThrow().toString());
+        assertEquals("B8",position.move(Direction.RIGHT).orElseThrow().toString());
 
         position =  new Position("F1");
-        assertEquals("G1",position.moveRight().orElseThrow().toString());
+        assertEquals("G1",position.move(Direction.RIGHT).orElseThrow().toString());
 
         position =  new Position("F8");
-        assertEquals("G8",position.moveRight().orElseThrow().toString());
+        assertEquals("G8",position.move(Direction.RIGHT).orElseThrow().toString());
 
         position =  new Position("F4");
-        assertEquals("G4",position.moveRight().orElseThrow().toString());
+        assertEquals("G4",position.move(Direction.RIGHT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"H1", "H8"})
     public void testNoMoveRight(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveRight());
+        assertEquals(Optional.empty(), position.move(Direction.RIGHT));
     }
 
     @Test
     public void testMoveLeft() throws InvalidPostionException {
         Position position =  new Position("F1");
-        assertEquals("E1",position.moveLeft().orElseThrow().toString());
+        assertEquals("E1",position.move(Direction.LEFT).orElseThrow().toString());
 
         position =  new Position("F8");
-        assertEquals("E8",position.moveLeft().orElseThrow().toString());
+        assertEquals("E8",position.move(Direction.LEFT).orElseThrow().toString());
 
         position =  new Position("F4");
-        assertEquals("E4",position.moveLeft().orElseThrow().toString());
+        assertEquals("E4",position.move(Direction.LEFT).orElseThrow().toString());
 
         position =  new Position("H1");
-        assertEquals("G1",position.moveLeft().orElseThrow().toString());
+        assertEquals("G1",position.move(Direction.LEFT).orElseThrow().toString());
 
         position =  new Position("H8");
-        assertEquals("G8",position.moveLeft().orElseThrow().toString());
+        assertEquals("G8",position.move(Direction.LEFT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A1", "A8"})
     public void testNoMoveLeft(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveLeft());
+        assertEquals(Optional.empty(), position.move(Direction.LEFT));
     }
 
     @Test
     public void testMoveDiagDownRight() throws InvalidPostionException {
         Position position =  new Position("A8");
-        assertEquals("B7",position.moveDiagDownRight().orElseThrow().toString());
+        assertEquals("B7",position.move(Direction.DIAG_DOWN_RIGHT).orElseThrow().toString());
 
         position =  new Position("F8");
-        assertEquals("G7",position.moveDiagDownRight().orElseThrow().toString());
+        assertEquals("G7",position.move(Direction.DIAG_DOWN_RIGHT).orElseThrow().toString());
 
         position =  new Position("F4");
-        assertEquals("G3",position.moveDiagDownRight().orElseThrow().toString());
+        assertEquals("G3",position.move(Direction.DIAG_DOWN_RIGHT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A1", "F1", "H1", "H8"})
     public void testNoMoveDiagDownRight(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveDiagDownRight());
+        assertEquals(Optional.empty(), position.move(Direction.DIAG_DOWN_RIGHT));
     }
 
     //@ValueSource(strings = {"A1", "A8", "F1", "F8", "F4", "H1", "H8"})
     @Test
     public void testMoveDiagDownLeft() throws InvalidPostionException {
         Position position =  new Position("F8");
-        assertEquals("E7",position.moveDiagDownLeft().orElseThrow().toString());
+        assertEquals("E7",position.move(Direction.DIAG_DOWN_LEFT).orElseThrow().toString());
 
         position =  new Position("F4");
-        assertEquals("E3",position.moveDiagDownLeft().orElseThrow().toString());
+        assertEquals("E3",position.move(Direction.DIAG_DOWN_LEFT).orElseThrow().toString());
 
         position =  new Position("H8");
-        assertEquals("G7",position.moveDiagDownLeft().orElseThrow().toString());
+        assertEquals("G7",position.move(Direction.DIAG_DOWN_LEFT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A1", "A8", "F1", "H1"})
     public void testNoMoveDiagDownLeft(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveDiagDownLeft());
+        assertEquals(Optional.empty(), position.move(Direction.DIAG_DOWN_LEFT));
     }
 
     @Test
     public void testMoveDiagUpLeft() throws InvalidPostionException {
         Position pos =  new Position("F4");
-        assertEquals("E5",pos.moveDiagUpLeft().orElseThrow().toString());
+        assertEquals("E5",pos.move(Direction.DIAG_UP_LEFT).orElseThrow().toString());
 
         pos =  new Position("F4");
-        assertEquals("E5",pos.moveDiagUpLeft().orElseThrow().toString());
+        assertEquals("E5",pos.move(Direction.DIAG_UP_LEFT).orElseThrow().toString());
 
         pos =  new Position("H1");
-        assertEquals("G2",pos.moveDiagUpLeft().orElseThrow().toString());
+        assertEquals("G2",pos.move(Direction.DIAG_UP_LEFT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A1", "A8", "F8", "H8"})
     public void testNoMoveDiagUpLeft(String pos) throws  InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveDiagUpLeft());
+        assertEquals(Optional.empty(), position.move(Direction.DIAG_UP_LEFT));
     }
     //@ValueSource(strings = {"A1", "A8", "F1", "F8", "F4", "H1", "H8"})
     @Test
     public void testMoveDiagUpRight() throws InvalidPostionException {
         Position position =  new Position("A1");
-        assertEquals("B2",position.moveDiagUpRight().orElseThrow().toString());
+        assertEquals("B2",position.move(Direction.DIAG_UP_RIGHT).orElseThrow().toString());
 
         position =  new Position("F1");
-        assertEquals("G2",position.moveDiagUpRight().orElseThrow().toString());
+        assertEquals("G2",position.move(Direction.DIAG_UP_RIGHT).orElseThrow().toString());
 
         position =  new Position("F4");
-        assertEquals("G5",position.moveDiagUpRight().orElseThrow().toString());
+        assertEquals("G5",position.move(Direction.DIAG_UP_RIGHT).orElseThrow().toString());
     }
 
     @ParameterizedTest
     @ValueSource(strings = {"A8", "F8",  "H1", "H8"})
     public void testNoMoveDiagUpRight(String pos) throws InvalidPostionException {
         Position position =  new Position(pos);
-        assertEquals(Optional.empty(), position.moveDiagUpRight());
+        assertEquals(Optional.empty(), position.move(Direction.DIAG_UP_RIGHT));
     }
 }

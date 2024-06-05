@@ -1,5 +1,6 @@
 package org.example.pieces;
 
+import org.example.Direction;
 import org.example.board.Position;
 
 import java.util.List;
@@ -13,18 +14,11 @@ public class King extends Piece {
 
     @Override
     public List<Position> getPossibleMoves() {
-        List<Optional<Position>> optionalList = List.of(
-                getPosition().moveBackward(),
-                getPosition().moveForward(),
-                getPosition().moveLeft(),
-                getPosition().moveRight(),
-                getPosition().moveDiagUpLeft(),
-                getPosition().moveDiagUpRight(),
-                getPosition().moveDiagDownLeft(),
-                getPosition().moveDiagDownRight());
-        return   optionalList.stream()
-                .filter(Optional::isPresent)
-                .map(Optional::get)
+        List<Direction> directions= List.of(Direction.UP,Direction.DOWN,Direction.LEFT,Direction.RIGHT,
+                Direction.DIAG_UP_LEFT,Direction.DIAG_UP_RIGHT, Direction.DIAG_DOWN_LEFT,Direction.DIAG_DOWN_RIGHT);
+        return directions.stream().map(direction ->getPosition().move(direction))
+               .filter(Optional::isPresent)
+               .map(Optional::get)
                 .collect(Collectors.toList());
     }
 }
