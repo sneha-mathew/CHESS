@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fee83585-f19e-4a37-9062-f7ec3258d6d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/PositionHelperTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/Move.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveBackward.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagDownLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagDownRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagUpLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagUpRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveForward.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveLeft.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveRight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/moves/MoveTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PositionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PositionHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +27,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
       </list>
@@ -26,21 +36,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "sneha-mathew"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;sneha-mathew&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/sneha-mathew/CHESS.git",
-    "accountId": "0d6d7dcb-5e08-4594-a6da-7d6b2b5199a8"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/sneha-mathew/CHESS.git&quot;,
+    &quot;accountId&quot;: &quot;0d6d7dcb-5e08-4594-a6da-7d6b2b5199a8&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2hM7GWCqp2pXrD4eDnf8Fa9oPoK" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -49,30 +59,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "JUnit.All in Chess (1).executor": "Run",
-    "JUnit.All in Chess.executor": "Run",
-    "JUnit.GameTest.testProcessInputValidPiece.executor": "Run",
-    "JUnit.KingTest.executor": "Run",
-    "JUnit.PieceFactoryTest.executor": "Run",
-    "JUnit.PositionHelperTest.executor": "Run",
-    "JUnit.PositionTest.executor": "Run",
-    "JUnit.QueenTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/vargh/IdeaProjects/Chess/src/main/java/org/example",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Chess (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Chess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.testProcessInputValidPiece.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KingTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PieceFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PositionHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PositionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QueenTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/vargh/IdeaProjects/Chess/src/main/java/org/example&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example.moves" />
       <recent name="org.example.pieces" />
       <recent name="org.example.exception" />
       <recent name="org.example.board" />
@@ -81,6 +93,7 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.moves" />
       <recent name="org.example" />
       <recent name="org.example.pieces" />
       <recent name="org.example.board" />
@@ -90,7 +103,7 @@
       <recent name="org.example" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in Chess (1)">
+  <component name="RunManager" selected="JUnit.All in Chess">
     <configuration name="All in Chess (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Chess" />
       <option name="PACKAGE_NAME" value="" />
@@ -125,9 +138,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.All in Chess" />
         <item itemvalue="JUnit.All in Chess (1)" />
         <item itemvalue="JUnit.GameTest.testProcessInputValidPiece" />
-        <item itemvalue="JUnit.All in Chess" />
       </list>
     </recent_temporary>
   </component>
@@ -144,5 +157,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/moves/Move.java</url>
+          <line>10</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,6 +1,9 @@
 package org.example.board;
 
+import org.example.PositionHelper;
 import org.example.exception.InvalidPostionException;
+import org.example.moves.*;
+
 import java.util.Optional;
 
 public class Position {
@@ -16,39 +19,47 @@ public class Position {
 
     @Override
     public String toString() {
-        return String.valueOf(column)+String.valueOf(row);
+        return PositionHelper.getString(column,row);
     }
 
     public Optional<Position> moveForward()  {
-        return move(column,increment(row));
+        String newPosition=new MoveForward().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveBackward()  {
-        return move(column,decrement(row));
+        String newPosition=new MoveBackward().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveRight()  {
-        return move( increment(column),row);
+        String newPosition=new MoveRight().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveLeft() {
-        return move( decrement(column),row);
+        String newPosition=new MoveLeft().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveDiagUpRight()  {
-        return move(increment(column),increment(row));
+        String newPosition=new MoveDiagUpRight().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveDiagUpLeft() {
-        return move( decrement(column),increment(row));
+        String newPosition=new MoveDiagUpLeft().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveDiagDownRight()  {
-        return move( increment(column),decrement(row));
+        String newPosition=new MoveDiagDownRight().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     public Optional<Position> moveDiagDownLeft() {
-        return move( decrement(column),decrement(row));
+        String newPosition=new MoveDiagDownLeft().proceed(PositionHelper.getString(column,row));
+        return getPosition(newPosition);
     }
 
     private char increment(char c) {
@@ -58,10 +69,14 @@ public class Position {
         return (char) (c - 1);
     }
     private Optional<Position> move(char column, char row) {
+        return getPosition("" + column + row);
+    }
+
+    private static Optional<Position> getPosition(String pos) {
         try {
-            return Optional.of(new Position("" + column + row));
+            return Optional.of(new Position(pos));
         }catch (InvalidPostionException ex){
-            return  Optional.empty();
+            return Optional.empty();
         }
     }
 }
