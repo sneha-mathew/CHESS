@@ -10,28 +10,28 @@ class MoveTest {
 
     @Test
     void testAllMoves() {
-        Move move=new MoveDown();
+        IMoveStrategy move=new DownMoveStrategy();
         assertEquals("K7",move.proceed(pos));
 
-        move=new MoveUp();
+        move=new UpStrategy();
         assertEquals("K9",move.proceed(pos));
 
-        move=new MoveLeft();
+        move=new LeftMoveStrategy();
         assertEquals("J8",move.proceed(pos));
 
-        move=new MoveRight();
+        move=new RightStrategy();
         assertEquals("L8",move.proceed(pos));
 
-        move=new MoveDiagUpLeft();
+        move=new DiagUpLeftMoveStrategy();
         assertEquals("J9",move.proceed(pos));
 
-        move=new MoveDiagUpRight();
+        move=new DiagUpRightMoveStrategy();
         assertEquals("L9",move.proceed(pos));
 
-        move=new MoveDiagDownLeft();
+        move=new DiagDownLeftMoveStrategy();
         assertEquals("J7",move.proceed(pos));
 
-        move=new MoveDiagDownRight();
+        move=new DiagDownRightMoveStrategy();
         assertEquals("L7",move.proceed(pos));
     }
 }

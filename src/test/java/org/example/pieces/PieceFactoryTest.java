@@ -29,7 +29,7 @@ class PieceFactoryTest {
 
     @ParameterizedTest
     @ValueSource(strings = {"Rock",  "Knight", "Horse"})
-    public void testNoMoveBackward(String piece) throws InvalidPostionException {
+    public void testNoPieceFound(String piece) throws InvalidPostionException {
         assertThrows(UnknownPiece.class, () -> {
             PieceFactory.getPiece(piece,true,"F4");
         });

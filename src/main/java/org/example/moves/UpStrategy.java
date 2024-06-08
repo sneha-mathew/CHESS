@@ -2,7 +2,7 @@ package org.example.moves;
 
 import org.example.PositionHelper;
 
-public class MoveUp implements Move {
+public class UpStrategy implements IMoveStrategy {
 
     @Override
     public String proceed(String position) {

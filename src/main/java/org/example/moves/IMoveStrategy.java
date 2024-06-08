@@ -1,6 +1,6 @@
 package org.example.moves;
 
-public interface Move {
+public interface IMoveStrategy {
     String proceed(String position);
     default char increment(char c) {
         return (char) (c + 1);

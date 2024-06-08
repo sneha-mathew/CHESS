@@ -5,16 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fee83585-f19e-4a37-9062-f7ec3258d6d2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Direction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Knight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/example/pieces/BishopTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/PositionHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/PositionHelper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/board/Position.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveBackward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDown.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveForward.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveUp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/board/PositionValidator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/board/IPosition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/Move.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/IMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagDownLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/DiagDownLeftMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagDownRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/DiagDownRightMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagUpLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/DiagUpLeftMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDiagUpRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/DiagUpRightMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveDown.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/DownMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveLeft.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/LeftMoveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveRight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/RightStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/moves/MoveUp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/moves/UpStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pieces/King.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/King.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pieces/Pawn.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Pawn.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pieces/Piece.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Piece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pieces/PieceFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/PieceFactory.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/pieces/Queen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/pieces/Queen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/PositionHelperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/PositionHelperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/board/PositionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/board/PositionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/example/moves/MoveTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/moves/MoveTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/pieces/PieceFactoryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/example/pieces/PieceFactoryTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,9 +40,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Enum" />
       </list>
     </option>
   </component>
@@ -57,30 +72,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Game.executor": "Run",
-    "JUnit.All in Chess (1).executor": "Run",
-    "JUnit.All in Chess.executor": "Run",
-    "JUnit.GameTest.testProcessInputValidPiece.executor": "Run",
-    "JUnit.KingTest.executor": "Run",
-    "JUnit.PawnTest.executor": "Run",
-    "JUnit.PieceFactoryTest.executor": "Run",
-    "JUnit.PositionHelperTest.executor": "Run",
-    "JUnit.PositionTest.executor": "Run",
-    "JUnit.QueenTest.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/Users/vargh/IdeaProjects/Chess/src/main/java/org/example",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Game.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Chess (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in Chess.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.BishopTestTest.checkValidMoves.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.GameTest.testProcessInputValidPiece.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KingTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PieceFactoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PositionHelperTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PositionTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QueenTest.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/Users/vargh/IdeaProjects/Chess/src/main/java/org/example&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="org.example.moves" />
@@ -92,9 +109,9 @@
       <recent name="" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example.pieces" />
       <recent name="org.example.moves" />
       <recent name="org.example" />
-      <recent name="org.example.pieces" />
       <recent name="org.example.board" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
@@ -119,6 +136,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BishopTestTest.checkValidMoves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Chess" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.pieces.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.pieces" />
+      <option name="MAIN_CLASS_NAME" value="org.example.pieces.BishopTestTest" />
+      <option name="METHOD_NAME" value="checkValidMoves" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="GameTest.testProcessInputValidPiece" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Chess" />
       <extension name="coverage">
@@ -138,6 +171,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.All in Chess" />
+        <item itemvalue="JUnit.BishopTestTest.checkValidMoves" />
         <item itemvalue="JUnit.All in Chess (1)" />
         <item itemvalue="JUnit.GameTest.testProcessInputValidPiece" />
       </list>
@@ -154,6 +188,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
@@ -161,9 +206,19 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/moves/Move.java</url>
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/moves/IMoveStrategy.java</url>
           <line>10</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/moves/IMoveStrategy.java</url>
+          <line>5</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/pieces/Knight.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.board.IPosition;
 import org.example.board.Position;
 import org.example.exception.InvalidPostionException;
 import org.example.exception.UnknownPiece;
@@ -21,7 +22,7 @@ public class Game {
 
     private static void processInput(String pieceType, String colour, String pos) {
         try {
-            List<Position> positionList = PieceFactory.getPiece(pieceType, ("white").equals(colour.toLowerCase()), pos).getPossibleMoves();
+            List<IPosition> positionList = PieceFactory.getPiece(pieceType, ("white").equals(colour.toLowerCase()), pos).getPossibleMoves();
             System.out.println("The possible moves are " + PositionHelper.getStringList(positionList));
         } catch (UnknownPiece | InvalidPostionException e) {
             System.out.println(e.getMessage());

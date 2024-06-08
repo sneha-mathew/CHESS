@@ -1,7 +1,12 @@
 package org.example.board;
 
-public class PositionValidator {
-    public static boolean validPosition(String pos) {
+import org.example.Direction;
+import org.example.moves.IMoveStrategy;
+
+import java.util.Optional;
+
+public interface IPosition {
+    default boolean validPosition(String pos) {
         return pos != null && pos.length() == 2 && colValid(pos) && rowValid(pos);
     }
 
@@ -11,4 +16,6 @@ public class PositionValidator {
     private static boolean rowValid(String pos) {
         return pos.charAt(1) >= '1' &&  pos.charAt(1) <= '8';
     }
+
+    Optional<IPosition> move(Direction direction);
 }
